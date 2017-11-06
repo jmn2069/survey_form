@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id = count>
+        <p>Thank you for submitting this form! You have submitted this form {{ request.session.counter }} time(s) now.</p>
+    </div>
+    <div id = info>
+        <h3>Submitted Information:</h3>
+        <p>Name: {{ request.session.name }}</p>
+        <p>Dojo Location: {{ request.session.location }}</p>
+        <p>Favorite Language: {{ request.session.language }}</p>
+        <p>Comment: {{ request.session.comment }}</p>
+    </div>
+    <form action="/">
+        <input type="submit" value="Go Back" />
+    </form>
+    <br>
+    <form action="/reset">
+        <input type="submit" value="Reset Counter" />
+    </form>
+</body>
+</html>
